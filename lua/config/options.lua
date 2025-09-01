@@ -25,7 +25,7 @@ set.signcolumn = "yes"
 set.cursorline = true
 
 -- 80th column
-set.colorcolumn = "80"
+set.colorcolumn = "100"
 
 -- backspace
 set.backspace = "indent,eol,start"
