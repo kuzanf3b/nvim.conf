@@ -5,7 +5,7 @@ return {
     priority = 1000,
     opts = {
       style = "night", -- night, storm, day, moon
-      transparent = true,
+      transparent = false,
       styles = {
         sidebars = "dark",
         floats = "dark",
