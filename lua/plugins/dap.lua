@@ -18,9 +18,9 @@ return {
       require("mason-nvim-dap").setup({
         ensure_installed = {
           "python",
-          "node2", -- Debugger untuk Node.js / JS / TS
-          "codelldb", -- Debugger untuk C/C++
-          "netcoredbg", -- Debugger untuk C#
+          "node2",
+          "codelldb",
+          "netcoredbg",
           "java-debug-adapter",
         },
         automatic_installation = true,
