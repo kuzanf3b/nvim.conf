@@ -1,7 +1,7 @@
 return {
   {
     "barrett-ruth/live-server.nvim",
-    build = "npm install -g live-server", -- install live-server kalau belum ada
+    build = "npm install -g live-server",
     config = function()
       require("live-server").setup({
         args = { "--browser=flatpak run app.zen_browser.zen" },
