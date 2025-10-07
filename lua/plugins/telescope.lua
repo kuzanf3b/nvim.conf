@@ -2,23 +2,38 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = {
         'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope-ui-select.nvim',
     },
     config = function()
         local actions = require('telescope.actions')
-        require('telescope').setup({
+        local telescope = require('telescope')
+
+        telescope.setup({
             defaults = {
                 hidden = true,
                 mappings = {
                     i = {
-                        ["<C-k>"] = actions.move_selection_previous,
-                        ["<C-j>"] = actions.move_selection_next,   
+                        ["<C-u>"] = actions.move_selection_previous,
+                        ["<C-d>"] = actions.move_selection_next,
                         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
                     }
                 }
-            }
+            },
+            extensions = {
+                ["ui-select"] = {
+                    require("telescope.themes").get_dropdown({
+                        winblend = 10,
+                        previewer = false,
+                        layout_config = { width = 0.4, height = 0.3 },
+                    }),
+                },
+            },
         })
 
+        telescope.load_extension("ui-select")
+
         local builtin = require('telescope.builtin')
+
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
         vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
         vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
@@ -27,10 +42,10 @@ return {
 
         -- Rip grep + Fzf
         vim.keymap.set('n', '<leader>fg', function()
-            builtin.grep_string({ search = vim.fn.input("Grep > ") });
+            builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
 
-        -- Find instance instance of current view being included
+        -- Find instance of current view being included
         vim.keymap.set('n', '<leader>fc', function()
             local filename_without_extension = vim.fn.expand('%:t:r')
             builtin.grep_string({ search = filename_without_extension })
@@ -41,9 +56,9 @@ return {
             builtin.grep_string({})
         end, { desc = "Find current string: " })
 
-        -- find files in vim config
+        -- Find files in vim config
         vim.keymap.set('n', '<leader>fi', function()
-            builtin.find_files({ cwd = "~/.config/nvim/" });
+            builtin.find_files({ cwd = "~/.config/nvim/" })
         end)
-    end
+    end,
 }
