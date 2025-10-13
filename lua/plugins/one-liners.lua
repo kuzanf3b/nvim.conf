@@ -1,32 +1,38 @@
 return {
-  { -- PHP/HTML indentation support
-    "captbaritone/better-indent-support-for-php-with-html",
-  },
+	{ -- PHP/HTML indentation support
+		"captbaritone/better-indent-support-for-php-with-html",
+	},
 
-  { -- Clipboard integration (OS copy)
-    "ojroques/vim-oscyank",
-    ft = { "php", "javascript", "html" }, -- hanya aktif di file tertentu
-  },
+	{ -- Clipboard integration (OS copy)
+		"ojroques/vim-oscyank",
+		ft = { "php", "javascript", "html" },
+	},
 
-  { -- Generate docblocks
-    "kkoomen/vim-doge",
-    build = ":call doge#install()",
-  },
+	{ -- Generate docblocks
+		"kkoomen/vim-doge",
+		build = ":call doge#install()",
+	},
 
-  { -- Git integration
-    "tpope/vim-fugitive",
-    cmd = { "Git", "G" }, -- lazy load saat menjalankan perintah Git
-  },
+	{ -- Git integration
+		"tpope/vim-fugitive",
+		cmd = { "Git", "G" },
+	},
 
-  { -- Undo history
-    "mbbill/undotree",
-    cmd = "UndotreeToggle", -- lazy load saat toggle undotree
-  },
+	{ -- Undo history
+		"mbbill/undotree",
+		cmd = "UndotreeToggle",
+	},
 
-  { -- Show CSS colors inline
-    "brenoprata10/nvim-highlight-colors",
-    config = function()
-      require("nvim-highlight-colors").setup({})
-    end,
-  },
+    {
+        "folke/ts-comments.nvim",
+        event = "VeryLazy",
+        opts = {},
+    },
+
+	{ -- Show CSS colors inline
+		"brenoprata10/nvim-highlight-colors",
+		config = function()
+			require("nvim-highlight-colors").setup({})
+		end,
+	},
 }

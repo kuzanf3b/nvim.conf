@@ -55,7 +55,8 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
 
 -- Stay in indent mode
-vim.keymap.set("n", "<", "gv", opts)
+vim.keymap.set("v", "<", "<gv", opts)
+vim.keymap.set("v", ">", ">gv", opts)
 
 -- Quickfix list stuff
 vim.keymap.set("n", "<leader>cl", ":cclose<CR>", { silent = true })
