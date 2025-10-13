@@ -8,13 +8,12 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")     
+vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- paste and don't replace clipboard over deleted text
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
 
 -- sometimes in insert mode, control-c doesn't exactly work like escape
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -49,6 +48,9 @@ vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual')
 vim.keymap.set("n", "<leader>rl", "<cmd>source ~/.config/nvim/init.lua<cr>")
 
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+
+-- Open Lazy
+vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
 
 -- Quickfix list stuff
 vim.keymap.set("n", "<leader>cl", ":cclose<CR>", { silent = true })
