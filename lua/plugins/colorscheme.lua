@@ -1,18 +1,11 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-      require("rose-pine").setup({
-        variant = "moon",
-        styles = {
-          transparency = false,
-        },
-      })
-
-      vim.cmd.colorscheme("rose-pine")
+      vim.g.tokyonight_style = "night"
+      vim.cmd.colorscheme("tokyonight")
 
       local function set_transparency()
         vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
