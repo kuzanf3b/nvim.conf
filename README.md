@@ -85,20 +85,19 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 
 1. **Clone ZenVim:**
 
-```bash
-git clone https://github.com/<yourusername>/zenvim ~/.config/nvim
+   ```bash
+   git clone https://github.com/<yourusername>/zenvim ~/.config/nvim
+   ```
 
 2. **Open Neovim and Lazy.nvim will automatically install plugins:**
 
-```bash
-nvim
+   ```bash
+   nvim
+   ```
 
 ---
 
 ## 🔑 Keymaps Overview
-
-```markdown
-## 🔑 Keymaps
 
 | Key | Action |
 |-----|--------|
@@ -122,3 +121,43 @@ nvim
 - Conform runs formatters asynchronously.
 - nvim-lint runs on file save.
 - Telescope provides fuzzy searching and live grep.
+- Treesitter enhances syntax highlighting and code structure understanding.
+
+---
+
+## 🧩 Folder Structure
+
+```
+~/.config/nvim
+├── init.lua
+├── lua
+│   ├── plugins
+│   │   ├── animations.lua
+│   │   ├── autopairs.lua
+│   │   ├── colorscheme.lua
+│   │   ├── completions.lua
+│   │   ├── dashboard.lua
+│   │   ├── formatter-linter.lua
+│   │   ├── harpoon.lua
+│   │   ├── lsp-config/
+│   │   │   ├── lsp.lua
+│   │   │   └── mason.lua
+│   │   ├── lualine.lua
+│   │   ├── motions.lua
+│   │   ├── neo-tree.lua
+│   │   ├── one-liners.lua
+│   │   ├── telescope.lua
+│   │   ├── treesitter.lua
+│   │   └── ui.lua
+│   └── core
+│       ├── options.lua
+│       └── keymaps.lua
+└── README.md
+```
+
+---
+
+## 🧘 Philosophy
+
+> ZenVim follows the “less but better” principle — minimal, modular, and mindful.  
+> Each plugin has a clear purpose and can be swapped or removed easily.
