@@ -79,3 +79,46 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 - ripgrep (`rg`)  
 - PHP ≥ 8.0 (for phpactor or intelephense)
 
+---
+
+## 🚀 Installation
+
+1. **Clone ZenVim:**
+
+```bash
+git clone https://github.com/<yourusername>/zenvim ~/.config/nvim
+
+2. **Open Neovim and Lazy.nvim will automatically install plugins:**
+
+```bash
+nvim
+
+---
+
+## 🔑 Keymaps Overview
+
+```markdown
+## 🔑 Keymaps
+
+| Key | Action |
+|-----|--------|
+| `<leader>ff` | Find files |
+| `<leader>fg` | Live grep |
+| `<leader>fb` | List buffers |
+| `<leader>fs` | Search current word |
+| `<leader>fi` | Find in `~/.config/nvim` |
+| `<leader>e` | Toggle Neo-tree |
+| `<leader>ca` | Code action |
+| `gd` | Go to definition |
+| `gr` | List references |
+| `<F2>` | Rename symbol |
+| `:UndotreeToggle` | Toggle undo history |
+
+---
+
+## 💡 Notes
+
+- Lazy.nvim handles plugin loading and optimization.
+- Conform runs formatters asynchronously.
+- nvim-lint runs on file save.
+- Telescope provides fuzzy searching and live grep.
