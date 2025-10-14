@@ -1,19 +1,18 @@
-# 💤 ZenVim — My Personal Neovim Setup
+# 💤 ZenVim
 
 [![Neovim](https://img.shields.io/badge/Neovim-0.9+-green?logo=neovim)](https://neovim.io/)
 [![Lua](https://img.shields.io/badge/Lua-5.1-blue?logo=lua)](https://www.lua.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Lazy.nvim](https://img.shields.io/badge/Plugin%20Manager-Lazy.nvim-orange)](https://github.com/folke/lazy.nvim)
 [![Theme](https://img.shields.io/badge/Theme-TokyoNight-purple)](https://github.com/folke/tokyonight.nvim)
 
-> A modern, fast, and minimal Neovim configuration optimized for development
+> A clean, modular Neovim configuration built from scratch with Lua and Lazy.nvim.
 
 ---
 
-## ✨ Overview
+## ⚡ Overview
 
-ZenVim is a modular Neovim setup.  
-Every plugin group has its own file under `lua/plugins/`, making it easy to extend or replace components.  
+ZenVim is a **modular Neovim setup built from scratch**.  
+Every feature is in its own file under `lua/plugins/`, making it easy to extend, replace, or debug.  
 
 ---
 
