@@ -6,7 +6,7 @@
 [![Lazy.nvim](https://img.shields.io/badge/Plugin%20Manager-Lazy.nvim-orange)](https://github.com/folke/lazy.nvim)
 [![Theme](https://img.shields.io/badge/Theme-TokyoNight-purple)](https://github.com/folke/tokyonight.nvim)
 
-> A modern, fast, and minimal Neovim configuration optimized for full-stack development (HTML, CSS, JS, PHP, Python, Lua).
+> A modern, fast, and minimal Neovim configuration optimized for development
 
 ---
 
@@ -80,14 +80,3 @@ Every plugin group has its own file under `lua/plugins/`, making it easy to exte
 - ripgrep (`rg`)  
 - PHP ≥ 8.0 (for phpactor or intelephense)
 
----
-
-## 🧑‍💻 Language Setup
-
-### 🦄 Lua
-- **LSP:** `lua_ls`  
-- **Formatter:** `stylua`  
-- **Linter:** `luacheck`  
-- ```bash
-  mason install lua-language-server stylua
-  luarocks install luacheck
