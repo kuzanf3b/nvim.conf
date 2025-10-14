@@ -54,9 +54,13 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 -- Open Lazy
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
 
--- Stay in indent mode
+-- stay in indent mode
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
+
+-- stay in indent mode
+vim.keymap.set("n", "<", "<gv", opts)
+vim.keymap.set("n", ">", ">gv", opts)
 
 -- Quickfix list stuff
 vim.keymap.set("n", "<leader>cl", ":cclose<CR>", { silent = true })
@@ -65,7 +69,3 @@ vim.keymap.set("n", "<leader>cn", ":cnext<CR>zz")
 vim.keymap.set("n", "<leader>cp", ":cprev<CR>zz")
 vim.keymap.set("n", "<leader>li", ":checkhealth vim.lsp<CR>", { desc = "LSP Info" })
 
--- source file
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
