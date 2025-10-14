@@ -11,7 +11,7 @@ return {
 			"diagnostics",
 			sources = { "nvim_diagnostic" },
 			sections = { "error", "warn" },
-            symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+			symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			colored = false,
 			update_in_insert = false,
 			always_visible = false,
@@ -21,7 +21,7 @@ return {
 		local diff = {
 			"diff",
 			colored = false,
-            symbols = { added = ' ', modified = ' ', removed = ' ' },
+			symbols = { added = " ", modified = " ", removed = " " },
 			cond = hide_in_width,
 		}
 
@@ -29,8 +29,8 @@ return {
 			options = {
 				theme = "auto",
 				icons_enabled = true,
-                section_separators = { left = "", right = "" },
-                component_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
+				component_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					statusline = { "dashboard", "NvimTree", "alpha", "starter" },
 				},

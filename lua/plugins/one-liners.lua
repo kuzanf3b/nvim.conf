@@ -23,11 +23,11 @@ return {
 		cmd = "UndotreeToggle",
 	},
 
-    {
-        "folke/ts-comments.nvim",
-        event = "VeryLazy",
-        opts = {},
-    },
+	{
+		"folke/ts-comments.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
 
 	{ -- Show CSS colors inline
 		"brenoprata10/nvim-highlight-colors",
