@@ -1,71 +1,72 @@
 -- KEYBINDS
 vim.g.mapleader = " "
--- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-
 local opts = { noremap = true, silent = true }
+local map = vim.keymap
+local tble = vim.tbl_extend
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+--  MOVE LINES
+map.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected down" })
+map.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected up" })
 
-vim.keymap.set("n", "J", "mzJ`z", opts)
-vim.keymap.set("n", "<C-d>", "<C-d>zz", opts)
-vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
-vim.keymap.set("n", "n", "nzzzv", opts)
-vim.keymap.set("n", "N", "Nzzzv", opts)
+--  SMOOTHER NAVIGATION
+map.set("n", "J", "mzJ`z", tble("force", opts, { desc = "Join lines" }))
+map.set("n", "<C-d>", "<C-d>zz", tble("force", opts, { desc = "Scroll down" }))
+map.set("n", "<C-u>", "<C-u>zz", tble("force", opts, { desc = "Scroll up" }))
+map.set("n", "n", "nzzzv", tble("force", opts, { desc = "Next search result" }))
+map.set("n", "N", "Nzzzv", tble("force", opts, { desc = "Prev search result" }))
 
--- paste and don't replace clipboard over deleted text
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+--  PASTE & DELETE WITHOUT OVERWRITING CLIPBOARD
+map.set("x", "<leader>p", [["_dP]], { desc = "Paste keep buf" })
+map.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete keep buf" })
 
--- sometimes in insert mode, control-c doesn't exactly work like escape
-vim.keymap.set("i", "<C-c>", "<Esc>", opts)
+--  INSERT MODE
+map.set("i", "<C-c>", "<Esc>", tble("force", opts, { desc = "Exit insert mode" }))
 
--- scroll thru quickfix list
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", opts)
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", opts)
+--  QUICKFIX NAVIGATION
+map.set("n", "<C-j>", "<cmd>cnext<CR>zz", tble("force", opts, { desc = "Next quickfix" }))
+map.set("n", "<C-k>", "<cmd>cprev<CR>zz", tble("force", opts, { desc = "Previous quickfix" }))
 
--- What the heck is Ex mode?
-vim.keymap.set("n", "Q", "<nop>", opts)
+--  DISABLE EX MODE
+map.set("n", "Q", "<nop>", tble("force", opts, { desc = "Disable Ex mode" }))
 
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz", opts)
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz", opts)
+--  LOCATION LIST NAVIGATION
+map.set("n", "<leader>k", "<cmd>lnext<CR>zz", tble("force", opts, { desc = "Next location list" }))
+map.set("n", "<leader>j", "<cmd>lprev<CR>zz", tble("force", opts, { desc = "Previous location list" }))
 
--- getting Alex off my back :)
-vim.keymap.set("n", "<leader>dg", "<cmd>DogeGenerate<cr>", opts)
+--  DOGE DOCGEN
+map.set("n", "<leader>dg", "<cmd>DogeGenerate<cr>", tble("force", opts, { desc = "Generate documentation" }))
 
--- lint / format php files for LC
-vim.keymap.set("n", "<leader>cc", "<cmd>!php-cs-fixer fix % --using-cache=no<cr>")
+--  PHP FIXER
+map.set("n", "<leader>cc", "<cmd>!php-cs-fixer fix % --using-cache=no<cr>", { desc = "Run PHP-CS-Fixer" })
 
--- Replace whatever is under cursor (on line)
-vim.keymap.set("n", "<leader>s", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
+--  SUBSTITUTE UNDER CURSOR
+map.set("n", "<leader>s", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Replace word under cursor" })
 
--- make file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+--  PERMISSIONS
+map.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "Chmod +x" })
 
--- yank into clipboard even if on ssh
-vim.keymap.set('n', '<leader>y', '<Plug>OSCYankOperator', opts)
-vim.keymap.set('v', '<leader>y', '<Plug>OSCYankVisual', opts)
+--  CLIPBOARD (OSC52)
+map.set("n", "<leader>y", "<Plug>OSCYankOperator", { desc = "Yank to clipboard" })
+map.set("v", "<leader>y", "<Plug>OSCYankVisual", { desc = "Yank selection to clipboard" })
 
--- reload without exiting vim
-vim.keymap.set("n", "<leader>rl", "<cmd>source ~/.config/nvim/init.lua<cr>")
+--  RELOAD NVIM
+map.set("n", "<leader>rl", "<cmd>source ~/.config/nvim/init.lua<cr>", { desc = "Reload Neovim config" })
 
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+--  UNDO TREE
+map.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle UndoTree" })
 
--- Open Lazy
-vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
+--  LAZY PLUGIN MANAGER
+map.set("n", "<leader>l", vim.cmd.Lazy, { desc = "Lazy" })
 
--- stay in indent mode
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
+--  INDENT BEHAVIOR
+map.set("v", "<", "<gv", tble("force", opts, { desc = "Decrease indent and stay" }))
+map.set("v", ">", ">gv", tble("force", opts, { desc = "Increase indent and stay" }))
 
--- stay in indent mode
-vim.keymap.set("n", "<", "<gv", opts)
-vim.keymap.set("n", ">", ">gv", opts)
+--  QUICKFIX CONTROL
+map.set("n", "<leader>cl", ":cclose<CR>", { silent = true, desc = "Close quickfix" })
+map.set("n", "<leader>co", ":copen<CR>", { silent = true, desc = "Open quickfix" })
+map.set("n", "<leader>cn", ":cnext<CR>zz", { desc = "Next quickfix" })
+map.set("n", "<leader>cp", ":cprev<CR>zz", { desc = "Prev quickfix" })
 
--- Quickfix list stuff
-vim.keymap.set("n", "<leader>cl", ":cclose<CR>", { silent = true })
-vim.keymap.set("n", "<leader>co", ":copen<CR>", { silent = true })
-vim.keymap.set("n", "<leader>cn", ":cnext<CR>zz")
-vim.keymap.set("n", "<leader>cp", ":cprev<CR>zz")
-vim.keymap.set("n", "<leader>li", ":checkhealth vim.lsp<CR>", { desc = "LSP Info" })
-
+--  LSP CHECK
+map.set("n", "<leader>li", ":checkhealth vim.lsp<CR>", { desc = "LSP info" })

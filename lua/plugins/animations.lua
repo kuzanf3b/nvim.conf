@@ -9,22 +9,40 @@ return {
 				mappings = {},
 				easing_function = "sine",
 				hide_cursor = true,
-                performance_mode = true,
+				performance_mode = true,
 				stop_eof = true,
 				respect_scrolloff = false,
 				cursor_scrolls_alone = true,
 			})
 
 			local keymap = {
-				["<C-u>"] = function() neoscroll.ctrl_u({ duration = 250 }) end,
-				["<C-d>"] = function() neoscroll.ctrl_d({ duration = 250 }) end,
-				["<C-b>"] = function() neoscroll.ctrl_b({ duration = 450 }) end,
-				["<C-f>"] = function() neoscroll.ctrl_f({ duration = 450 }) end,
-				["<A-y>"] = function() neoscroll.scroll(-0.1, { move_cursor = false, duration = 100 }) end,
-				["<A-e>"] = function() neoscroll.scroll(0.1, { move_cursor = false, duration = 100 }) end,
-				["zt"] = function() neoscroll.zt({ half_win_duration = 250 }) end,
-				["zz"] = function() neoscroll.zz({ half_win_duration = 250 }) end,
-				["zb"] = function() neoscroll.zb({ half_win_duration = 250 }) end,
+				["<C-u>"] = function()
+					neoscroll.ctrl_u({ duration = 250 })
+				end,
+				["<C-d>"] = function()
+					neoscroll.ctrl_d({ duration = 250 })
+				end,
+				["<C-b>"] = function()
+					neoscroll.ctrl_b({ duration = 450 })
+				end,
+				["<C-f>"] = function()
+					neoscroll.ctrl_f({ duration = 450 })
+				end,
+				["<A-y>"] = function()
+					neoscroll.scroll(-0.1, { move_cursor = false, duration = 100 })
+				end,
+				["<A-e>"] = function()
+					neoscroll.scroll(0.1, { move_cursor = false, duration = 100 })
+				end,
+				["zt"] = function()
+					neoscroll.zt({ half_win_duration = 250 })
+				end,
+				["zz"] = function()
+					neoscroll.zz({ half_win_duration = 250 })
+				end,
+				["zb"] = function()
+					neoscroll.zb({ half_win_duration = 250 })
+				end,
 			}
 			keymap["{"] = function()
 				local before = vim.fn.line("w0")
@@ -57,9 +75,9 @@ return {
 		"sphamba/smear-cursor.nvim",
 		event = "VeryLazy",
 		opts = {
-			stiffness = 0.5,
-			trailing_stiffness = 0.5,
-			matrix_pixel_threshold = 0.5,
+			stiffness = 0.6,
+			trailing_stiffness = 0.6,
+			matrix_pixel_threshold = 0.6,
 		},
 		config = function()
 			require("smear_cursor").setup({
