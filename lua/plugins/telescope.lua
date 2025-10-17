@@ -28,11 +28,11 @@ return {
 				path_display = { "truncate" },
 				layout_strategy = "flex",
 				layout_config = {
-					prompt_position = "top",
+					prompt_position = "bottom",
 					horizontal = { preview_width = 0.55 },
 					vertical = { mirror = false },
 				},
-				sorting_strategy = "ascending",
+				sorting_strategy = "descending",
 				file_ignore_patterns = { "node_modules", "%.git/", "venv/", "build/" },
 				mappings = {
 					i = {
@@ -68,11 +68,11 @@ return {
 			},
 		})
 
-		-- 🔌 Load extensions safely
+		-- Load extensions safely
 		pcall(telescope.load_extension, "fzf")
 		pcall(telescope.load_extension, "ui-select")
 
-		-- 🔑 Keymaps
+		-- Keymaps
 		local map = vim.keymap.set
 		map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 		map("n", "<leader>fo", builtin.oldfiles, { desc = "Recent files" })

@@ -83,8 +83,6 @@ return {
 			require("smear_cursor").setup({
 				smear_length = 12,
 				smear_fade = 35,
-				cursor_color = "#c0caf5",
-				smear_color = "#7aa2f7",
 			})
 		end,
 	},
