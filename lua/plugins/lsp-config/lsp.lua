@@ -10,7 +10,7 @@ return {
 	config = function()
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- 🧠 Lua LSP
+		-- Lua LSP
 		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			settings = {
@@ -22,23 +22,23 @@ return {
 		})
 		vim.lsp.enable("lua_ls")
 
-		-- 🐍 Python LSP
+		--  Python LSP
 		vim.lsp.config("pyright", { capabilities = capabilities })
 		vim.lsp.enable("pyright")
 
-		-- 🌐 TypeScript/JavaScript LSP (modern replacement for tsserver)
+		-- TypeScript/JavaScript LSP (modern replacement for tsserver)
 		vim.lsp.config("ts_ls", { capabilities = capabilities })
 		vim.lsp.enable("ts_ls")
 
-		-- 🐘 PHP LSP
+		-- PHP LSP
 		vim.lsp.config("intelephense", { capabilities = capabilities })
 		vim.lsp.enable("intelephense")
 
-		-- ☕ Java LSP (pakai jdtls)
+		-- Java LSP (pakai jdtls)
 		vim.lsp.config("jdtls", { capabilities = capabilities })
 		vim.lsp.enable("jdtls")
 
-		-- 🎨 HTML, CSS, JSON
+		-- HTML, CSS, JSON
 		vim.lsp.config("html", { capabilities = capabilities })
 		vim.lsp.enable("html")
 
@@ -48,7 +48,7 @@ return {
 		vim.lsp.config("jsonls", { capabilities = capabilities })
 		vim.lsp.enable("jsonls")
 
-		-- 🔑 Keymaps per buffer
+		--  Keymaps per buffer
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(event)
 				local opts = { buffer = event.buf }

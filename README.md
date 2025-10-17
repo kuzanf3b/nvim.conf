@@ -132,6 +132,9 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 ├── init.lua
 ├── lua
 │   ├── plugins
+│   │   ├── lsp-config/
+│   │   │   ├── lsp.lua
+│   │   │   └── mason.lua
 │   │   ├── animations.lua
 │   │   ├── autopairs.lua
 │   │   ├── colorscheme.lua
@@ -139,18 +142,15 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 │   │   ├── dashboard.lua
 │   │   ├── formatter-linter.lua
 │   │   ├── harpoon.lua
-│   │   ├── lsp-config/
-│   │   │   ├── lsp.lua
-│   │   │   └── mason.lua
 │   │   ├── lualine.lua
 │   │   ├── motions.lua
 │   │   ├── neo-tree.lua
 │   │   ├── one-liners.lua
 │   │   ├── telescope.lua
 │   │   ├── treesitter.lua
-│   │   └── ui.lua
 │   └── core
 │       ├── options.lua
+│       ├── lazy.lua
 │       └── keymaps.lua
 └── README.md
 ```
