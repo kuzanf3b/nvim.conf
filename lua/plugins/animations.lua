@@ -78,6 +78,7 @@ return {
 			stiffness = 0.6,
 			trailing_stiffness = 0.6,
 			matrix_pixel_threshold = 0.6,
+			vertical_bar_cursor_insert_mode = true,
 		},
 		config = function()
 			require("smear_cursor").setup({

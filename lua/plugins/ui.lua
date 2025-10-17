@@ -60,12 +60,12 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		opts = {
-			preset = "modern",
+			preset = "helix",
 			notify = true,
 			win = {
 				border = "rounded",
 				no_overlap = true,
-				padding = { 2, 2 },
+				padding = { 1, 1 },
 				zindex = 1000,
 				wo = { winblend = 10 },
 			},

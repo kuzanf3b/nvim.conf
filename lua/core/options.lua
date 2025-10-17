@@ -1,7 +1,7 @@
 -- OPTIONS
 local opts = vim.opt
 
--- line numbers 
+-- line numbers
 opts.number = true
 opts.relativenumber = true
 
