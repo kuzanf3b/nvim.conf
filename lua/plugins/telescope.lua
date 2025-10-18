@@ -14,6 +14,7 @@ return {
 			end,
 		},
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+		"folke/todo-comments.nvim",
 	},
 
 	config = function()
@@ -71,6 +72,7 @@ return {
 		-- Load extensions safely
 		pcall(telescope.load_extension, "fzf")
 		pcall(telescope.load_extension, "ui-select")
+		pcall(telescope.load_extension, "todo-comments")
 
 		-- Keymaps
 		local map = vim.keymap.set
@@ -105,6 +107,10 @@ return {
 				winblend = 10,
 				previewer = false,
 			}))
-		end, { desc = "Search in current buffer" })
+		end, { desc = "Find in current buffer" })
+
+		map("n", "<leader>ft", function()
+			require("telescope").extensions["todo-comments"].todo()
+		end, { desc = "Find TODO comments" })
 	end,
 }

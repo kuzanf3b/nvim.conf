@@ -77,7 +77,7 @@ return {
 			formatting = {
 				fields = { "kind", "abbr", "menu" },
 				format = lspkind.cmp_format({
-					mode = "symbol_text",
+					mode = "symbol",
 					maxwidth = 50,
 					ellipsis_char = "...",
 					menu = {
