@@ -47,6 +47,8 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 ### 🏃 Motions
 - **[nvim-multicursor](https://github.com/smoka7/multicursors.nvim)** → Multi-cursor editing.
 - **[flash.nvim](https://github.com/folke/flash.nvim)** → Enhanced motion & navigation.
+- **[nvim-surround](https://github.com/kylechui/nvim-surround)** → Add/delete/change surrounding pairs. 
+- **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)** → Highlight and search for todo comments.
 
 ### 🧩 One-Liners / Utilities
 - **[better-indent-support-for-php-html](https://github.com/Vimjas/vim-html-php-indent)** → Correct PHP/HTML indentation.
@@ -60,6 +62,8 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 ### 🪶 UI & Experience
 - **[noice.nvim](https://github.com/folke/noice.nvim)** → Modern command line, messages, and popup UI.
 - **[which-key.nvim](https://github.com/folke/which-key.nvim)** → Display available keybindings in popup.
+- **[indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)** → Indentation guides to Neovim.
+- **[mini-indentscope](https://github.com/echasnovski/mini.indentscope)** → Visualize scope with animated vertical line.
 
 ### 🧠 LSP & Mason
 - **[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)** → Built-in LSP configuration.
@@ -131,27 +135,27 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 ~/.config/nvim
 ├── init.lua
 ├── lua
-│   ├── plugins
-│   │   ├── lsp-config/
-│   │   │   ├── lsp.lua
-│   │   │   └── mason.lua
-│   │   ├── animations.lua
-│   │   ├── autopairs.lua
-│   │   ├── colorscheme.lua
-│   │   ├── completions.lua
-│   │   ├── dashboard.lua
-│   │   ├── formatter-linter.lua
-│   │   ├── harpoon.lua
-│   │   ├── lualine.lua
-│   │   ├── motions.lua
-│   │   ├── neo-tree.lua
-│   │   ├── one-liners.lua
-│   │   ├── telescope.lua
-│   │   ├── treesitter.lua
-│   └── core
-│       ├── options.lua
-│       ├── lazy.lua
-│       └── keymaps.lua
+│   ├── core
+│   │   ├── options.lua
+│   │   ├── lazy.lua
+│   │   └── keymaps.lua
+│   └── plugins
+│       │   ├── lsp-config/
+│       │   ├── lsp.lua
+│       │   └── mason.lua
+│       ├── animations.lua
+│       ├── autopairs.lua
+│       ├── colorscheme.lua
+│       ├── completions.lua
+│       ├── dashboard.lua
+│       ├── formatter-linter.lua
+│       ├── harpoon.lua
+│       ├── lualine.lua
+│       ├── motions.lua
+│       ├── neo-tree.lua
+│       ├── one-liners.lua
+│       ├── telescope.lua
+│       └── treesitter.lua
 └── README.md
 ```
 
