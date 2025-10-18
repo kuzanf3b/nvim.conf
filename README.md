@@ -155,7 +155,8 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 │       ├── neo-tree.lua
 │       ├── one-liners.lua
 │       ├── telescope.lua
-│       └── treesitter.lua
+│       ├── treesitter.lua
+│       └── ui.lua
 └── README.md
 ```
 
