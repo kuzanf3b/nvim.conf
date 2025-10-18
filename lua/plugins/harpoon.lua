@@ -1,15 +1,14 @@
 local conf = require("telescope.config").values
 local themes = require("telescope.themes")
 
--- helper function to use telescope on harpoon list.
--- change get_ivy to other themes if wanted
 local function toggle_telescope(harpoon_files)
 	local file_paths = {}
 	for _, item in ipairs(harpoon_files.items) do
 		table.insert(file_paths, item.value)
 	end
+
 	local opts = themes.get_ivy({
-		promt_title = "Working List",
+		prompt_title = "Harpoon Files",
 	})
 
 	require("telescope.pickers")
@@ -28,17 +27,68 @@ return {
 	branch = "harpoon2",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"folke/which-key.nvim",
 	},
 	config = function()
 		local harpoon = require("harpoon")
-		vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-		vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-		vim.keymap.set("n", "<leader>fl", function() toggle_telescope(harpoon:list()) end, { desc = "Open harpoon window" })
-		vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end)
-		vim.keymap.set("n", "<C-n>", function() harpoon:list():next() end)
-		vim.keymap.set("n", "<leader>dr", function() harpoon:list():remove() end)
-		vim.keymap.set("n", "<leader>dc", function() harpoon:list():clear()
-			vim.notify("Harpoon list cleared!", vim.log.levels.INFO)
-		end, { desc = "Clear all Harpoon files" })
+
+		local wk = require("which-key")
+		wk.add({
+			{ "<leader>h", group = "Harpoon" },
+			{
+				"<leader>ha",
+				function()
+					harpoon:list():add()
+				end,
+				desc = "Add file",
+			},
+			{
+				"<leader>hl",
+				function()
+					toggle_telescope(harpoon:list())
+				end,
+				desc = "List files (Telescope)",
+			},
+			{
+				"<leader>hm",
+				function()
+					harpoon.ui:toggle_quick_menu(harpoon:list())
+				end,
+				desc = "Menu UI",
+			},
+			{
+				"<leader>hp",
+				function()
+					harpoon:list():prev()
+				end,
+				desc = "Prev file",
+			},
+			{
+				"<leader>hn",
+				function()
+					harpoon:list():next()
+				end,
+				desc = "Next file",
+			},
+			{
+				"<leader>hr",
+				function()
+					harpoon:list():remove()
+				end,
+				desc = "Remove current file",
+			},
+			{
+				"<leader>hc",
+				function()
+					harpoon:list():clear()
+					vim.notify("Harpoon list cleared!", vim.log.levels.INFO)
+				end,
+				desc = "Clear list",
+			},
+		})
+
+		vim.keymap.set("n", "<C-e>", function()
+			harpoon.ui:toggle_quick_menu(harpoon:list())
+		end, { desc = "Harpoon quick menu" })
 	end,
 }

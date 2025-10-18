@@ -72,7 +72,7 @@ return {
 			layout = {
 				width = { min = 20, max = 50 },
 				spacing = 4,
-				align = "left",
+				align = "center",
 			},
 			plugins = {
 				marks = true,
