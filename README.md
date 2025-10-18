@@ -90,7 +90,7 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 1. **Clone ZenVim:**
 
    ```bash
-   git clone https://github.com/kuzanf3b/nvim.conf ~/.config/nvim
+   git clone https://github.com/kuzanf3b/ZenVim ~/.config/nvim
    ```
 
 2. **Open Neovim and Lazy.nvim will automatically install plugins:**
