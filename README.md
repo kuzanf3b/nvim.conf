@@ -24,8 +24,8 @@ Every feature is in its own file under `lua/plugins/`, making it easy to extend,
 | 🪄 **Completion** | Autocompletion via `nvim-cmp` and `LuaSnip` |
 | 🧹 **Formatting & Linting** | Automatic formatting and linting via `conform.nvim`, `nvim-lint`, `mason-conform.nvim` |
 | 🎥 **Smooth Animations** | Seamless scroll and cursor effects using `neoscroll.nvim` and `smear-cursor.nvim` |
-| 🚀 **Motion Enhancements** | Faster navigation with `flash.nvim` and multi-cursor editing via `nvim-multicursor` |
-| 🪶 **UI Enhancements** | Beautiful command line, popups, and key hints with `noice.nvim` and `which-key.nvim` |
+| 🚀 **Motion Enhancements** | Faster navigation with `flash.nvim`, multi-cursor editing via `nvim-multicursor`, easy add/delete/change bracket via `nvim-surround`, and highlight & search for comments with `todo-comments.nvim` |
+| 🪶 **UI Enhancements** | Beautiful command line, popups, key hints, and indentation guides with `noice.nvim`, `which-key.nvim`, and `indent-blankline.nvim`|
 | 🧭 **File Explorer** | File and git tree navigation using `neo-tree.nvim` |
 | 🔍 **Search Everything** | Fuzzy finding and live grep via `telescope.nvim` |
 | 🌳 **Syntax Tree** | Better syntax highlighting and parsing with `nvim-treesitter` |
